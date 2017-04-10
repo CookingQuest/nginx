@@ -1,6 +1,6 @@
 FROM nginx:latest
-RUN apt-get update && apt-get install -y git  
-RUN git clone https://github.com/CookingQuest/nginx.git /repo
+RUN apt-get update && apt-get install -y unzip
+ADD https://github.com/CookingQuest/nginx/archive/master.zip /repo/repo.zip
 WORKDIR /repo
-RUN git pull    
-RUN mv -f * /etc/nginx
+RUN unzip /repo.zip
+RUN mv -f *.conf /etc/nginx
