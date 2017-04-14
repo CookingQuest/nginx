@@ -4,4 +4,3 @@ ADD https://github.com/CookingQuest/nginx/archive/master.zip /repo/repo.zip
 WORKDIR /repo
 RUN unzip repo.zip
 RUN mv -f nginx-master/*.conf /etc/nginx
-EXPOSE 443
